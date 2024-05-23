@@ -1,14 +1,9 @@
-/* eslint-disable no-undef */
-import React from "react";
-import ReactDOM from "react-dom";
-
 const rootElement = document.querySelector('#root');
 
-const greeting = React.createElement(
+const greetingElement = React.createElement(
     'div',
-    { className: 'gretting' },
-    'Hello react!'
-    );
+    { className: 'greeting'},
+    'Hello, React!'
+)
 
-ReactDOM.render(greeting, rootElement)
-
+ReactDOM.render(greetingElement, rootElement);
