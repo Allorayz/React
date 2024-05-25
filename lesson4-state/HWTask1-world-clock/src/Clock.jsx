@@ -17,11 +17,12 @@ class Clock extends Component {
     super(props);
     this.state = {
       location: props.location,
+      timeZone: formatDate(getTimeWithOffset(props.timeZone)),
     };
 
     setInterval(() => {
       this.setState({
-        timeZone: formatDate(getTimeWithOffset(props.timeZone)),
+        timeZone: formatDate(getTimeWithOffset(this.props.timeZone)),
       });
     }, 1000);
   }
