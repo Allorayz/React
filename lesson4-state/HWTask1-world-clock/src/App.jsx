@@ -5,7 +5,7 @@ const App = () => {
   return (
     <>
       <Clock location={'New york'} timeZone={-5} />
-      <Clock location={'Kyiv'} timeZone={3} />
+      <Clock location={'Kyiv'} timeZone={2} />
       <Clock location={'london'} timeZone={0} />
     </>
   );
