@@ -16,12 +16,12 @@ class Clock extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: getTimeWithOffset(this.props.timeZone),
+      location: props.location,
     };
 
     setInterval(() => {
       this.setState({
-        date: getTimeWithOffset(this.props.timeZone),
+        timeZone: formatDate(getTimeWithOffset(props.offset)),
       });
     }, props.interval);
   }
@@ -29,8 +29,8 @@ class Clock extends Component {
   render() {
     return (
       <div className="clock">
-        <div className="clock__location">{this.props.location}</div>
-        <div className="clock__time">{formatDate(this.state.date)}</div>
+        <div className="clock__location">{this.state.location}</div>
+        <div className="clock__time">{this.state.timeZone}</div>
       </div>
     );
   }
