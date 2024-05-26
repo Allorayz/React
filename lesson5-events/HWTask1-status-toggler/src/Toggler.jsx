@@ -18,7 +18,6 @@ class Toggler extends React.Component {
     // };
 
     const newToggle = this.state.defaultToggle === 'Off' ? 'On' : 'Off';
-    console.log(newToggle);
     this.setState({
       // defaultToggle: isToggle(this.state.defaultToggle),
       defaultToggle: newToggle,
