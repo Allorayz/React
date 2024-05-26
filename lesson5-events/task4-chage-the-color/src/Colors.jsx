@@ -6,7 +6,7 @@ const colors = {
   BlUE: '#00f',
 };
 
-class Color extends React.Component {
+class Colors extends React.Component {
   setBGcolor = color => {
     document.body.style.backgroundColor = color;
   };
@@ -34,4 +34,4 @@ class Color extends React.Component {
   }
 }
 
-export default Color;
+export default Colors;

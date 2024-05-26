@@ -1,10 +1,10 @@
 import React from 'react';
-import Color from './Color';
+import Colors from './Colors';
 
 const App = () => {
   return (
     <>
-      <Color />
+      <Colors />
     </>
   );
 };
