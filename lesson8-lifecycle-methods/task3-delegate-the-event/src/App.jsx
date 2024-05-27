@@ -1,9 +1,9 @@
 import React from 'react';
-import Dimension from './Dimension';
+import Dimensions from './Dimensions';
 
 class App extends React.Component {
   render() {
-    return <Dimension />;
+    return <Dimensions />;
   }
 }
 
