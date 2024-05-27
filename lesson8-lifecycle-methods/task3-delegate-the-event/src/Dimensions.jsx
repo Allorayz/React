@@ -13,7 +13,7 @@ class Dimensions extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('rezize', this.onResize);
+    window.removeEventListener('resize', this.onResize);
   }
 
   onResize = e => {

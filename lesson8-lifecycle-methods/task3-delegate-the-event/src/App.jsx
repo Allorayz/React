@@ -1,10 +1,8 @@
 import React from 'react';
 import Dimensions from './Dimensions';
 
-class App extends React.Component {
-  render() {
-    return <Dimensions />;
-  }
-}
+const App = () => {
+  return <Dimensions />;
+};
 
 export default App;
