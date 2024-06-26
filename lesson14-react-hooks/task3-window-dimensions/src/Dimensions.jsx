@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
 const Dimensions = () => {
-  const [dimensions, setDimensions] = useState({
+  const [dimensions, setDimension] = useState({
     width: null,
-    height: null,
+    heigth: null,
   });
 
   useEffect(() => {
     const { innerHeight, innerWidth } = window;
-    setDimensions({ width: innerWidth, height: innerHeight });
-
+    setDimension({ width: innerWidth, heigth: innerHeight });
     const handleResize = e => {
-      const { innerWidth, innerHeight } = e.target.valueOf();
-      setDimensions({ width: innerWidth, height: innerHeight });
+      const { innerHeight, innerWidth } = e.target;
+      setDimension({ width: innerWidth, heigth: innerHeight });
     };
     window.addEventListener('resize', handleResize);
 
@@ -21,8 +20,8 @@ const Dimensions = () => {
     };
   }, []);
 
-  const { width, height } = dimensions;
-  return <div className="dimensions">{`${width}px - ${height}px`}</div>;
+  const { width, heigth } = dimensions;
+  return <div className="dimensions">{`${width}px - ${heigth}px`}</div>;
 };
 
 export default Dimensions;
