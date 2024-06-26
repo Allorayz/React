@@ -1,27 +1,31 @@
 import React, { useState, useEffect } from 'react';
 
 const Dimensions = () => {
-  const [dimensions, setDimension] = useState({
-    width: null,
-    heigth: null,
+  const [dimensions, setDimensions] = useState({
+    width: 0,
+    height: 0,
   });
 
   useEffect(() => {
-    const { innerHeight, innerWidth } = window;
-    setDimension({ width: innerWidth, heigth: innerHeight });
+    const { innerWidth, innerHeight } = window;
+    setDimensions({
+      width: innerWidth,
+      height: innerHeight,
+    });
+
     const handleResize = e => {
-      const { innerHeight, innerWidth } = e.target;
-      setDimension({ width: innerWidth, heigth: innerHeight });
+      const { innerWidth, innerHeight } = e.target;
+      setDimensions({
+        width: innerWidth,
+        height: innerHeight,
+      });
     };
     window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const { width, heigth } = dimensions;
-  return <div className="dimensions">{`${width}px - ${heigth}px`}</div>;
+  const { width, height } = dimensions;
+  return <div className="dimensions">{`${width}px - ${height}px`}</div>;
 };
 
 export default Dimensions;
